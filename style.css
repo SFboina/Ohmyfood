@@ -4,9 +4,39 @@
   margin: 0;
   padding: 0;
 }
-.page-home .loader {
+.page-home .container-loader {
   position: fixed;
-  background-image: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  visibility: hidden;
+  animation: loader 3s linear;
+}
+@keyframes loader {
+  0% {
+    visibility: inherit;
+    z-index: 999;
+  }
+}
+.page-home .container-loader .loader {
+  border: 16px solid #9356DC;
+  border-top: 16px solid #FF79DA;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 500ms linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 .page-home #logo {
   font-family: "Shrikhand", cursive;
@@ -80,8 +110,11 @@
   padding: 16px;
   background: #f6f6f6;
 }
-.page-home .fa-solid.fa-heart {
+.page-home .fa-heart:hover {
   background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 .page-home .badge {
   width: 80px;
@@ -178,14 +211,6 @@
 .page-restaurant .fa-arrow-left {
   color: #353535;
   text-align: left;
-}
-.page-restaurant .loader {
-  position: fixed;
-  border-radius: 50%;
-  width: 120px;
-  height: 120px;
-  background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
-  animation: spin 2s linear infinite;
 }
 .page-restaurant #logo {
   font-family: "Shrikhand", cursive;
