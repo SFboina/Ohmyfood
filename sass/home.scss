@@ -1,44 +1,57 @@
 /* Small devices (phones, less than 768px) */
-$violet: #9356DC;
 
 .page-home {
   font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
+
   .container-loader {
     position: fixed;
     top: 0;
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 100%;
     background-color: white;
     visibility: hidden;
-    animation: loader 3s linear;
-    
+    animation: loader 10ms linear;
     @keyframes loader {
-      0%{
+      0% {
+        z-index: 10;
         visibility: inherit;
-        z-index: 999;
+      }
+      100% {
+        z-index: 10;
+        visibility: inherit;
       }
     }
-    .loader {
-      border: 16px solid $violet; 
-      border-top: 16px solid #FF79DA; 
+    .loader{
+      width : 60px;
+      height: 60px;
+      border: 3px solid #9356DC;
       border-radius: 50%;
-      width: 120px;
-      height: 120px;
-      animation: spin 500ms linear infinite;
+      display: inline-block;
+      position: relative;
+      animation: rotation 1s linear infinite;
+      &:after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50% , -50%);
+        width:  60px - 8px;
+        height:  60px - 8px;
+        border-radius: 50%;
+        border: 3px solid transparent;
+        border-bottom-color: #FF79DA;
+      }
+      @keyframes rotation {
+        0% { transform: rotate(0deg) }
+        100% { transform: rotate(360deg) }
+      }
     }
   }
-
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
   #logo {
     font-family: 'Shrikhand', cursive;
     text-align: center;
@@ -72,10 +85,12 @@ $violet: #9356DC;
     border: none;
     border-radius: 25px;
     color: white;
+    box-shadow: 0px 4px 15px 0px #00000026;
   }
   
   .explore button:hover {
-    transform: scale(1.02);
+    opacity: 0.8;
+    box-shadow: 4px 8px 20px 0px #00000026;
   }
   
   li i:hover {
@@ -89,6 +104,7 @@ $violet: #9356DC;
     margin: 10px;
     list-style: none;
     position: relative;
+    box-shadow: 0px 4px 15px 0px #00000026;
   }
   
   .fonction {
@@ -124,11 +140,8 @@ $violet: #9356DC;
     padding: 16px;
     background: #f6f6f6;
   }
-  .fa-heart:hover {
+  .fa-solid.fa-heart {
     background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
   }
   
   .badge {
@@ -140,6 +153,8 @@ $violet: #9356DC;
     position: absolute;
     top: 10px;
     right: 10px;
+    line-height: 29px;
+    text-align: center;
   }
   
   .restaurants-card {
@@ -157,12 +172,16 @@ $violet: #9356DC;
     padding: 0 16px;
   }
   
-  .card-rating {
+ .card-rating {
     display: flex;
     align-items: center;
   }
   .fa-heart:hover {
     font-weight: 600;
+    background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
   }
   .restaurants-card img {
     object-fit: cover;
@@ -182,14 +201,7 @@ $violet: #9356DC;
     flex-wrap: wrap;
   }
   
-  footer {
-    background: #353535;
-    color: white;
-    gap: 16px;
-  }
-  footer i {
-    margin-right: 8px;
-  }
+  
 
   #logo-end {
     color: white;
@@ -199,9 +211,6 @@ $violet: #9356DC;
     font-weight: 400;
     line-height: 26px;
     letter-spacing: 0em;
-    text-align: center;
-    width: 138px;
-    height: 27px;
   }
   
   a {
@@ -209,27 +218,38 @@ $violet: #9356DC;
     color: white;
   }
 
+  @media (min-width: 1024px) {
+    .fonction {
+      ul {
+        li {
+          padding: 20px!important;
+        }
+      }
+    }
+  }
   @media (min-width: 768px) {
     #restaurants {
-      padding: 0 180px 0 180px;
+      .restaurants-title, .container-restaurants {
+        max-width: 1400px;
+        margin: auto;
+      }
+      .container-restaurants {
+        gap: 40px;
+      }
     }
     .restaurants-card {
-      width: 40%;
+      width: 47%;
     }
-    .fonction li {
-      display: inline-block;
-    
+    .fonction {
+      max-width: 1400px;
+      margin: auto;
+      ul {
+        display: flex;
+        li {
+          width: 100%;
+          padding: 20px 8px;
+        }
+      }
     }
-    footer {
-      display: flex;
-      flex-direction: row-reverse;
-      gap: 16px;
-    }
-    
   }
 }
-  
-  
-
-    
-    

@@ -4,3 +4,26 @@
 * {
     box-sizing: border-box;
 }
+
+footer {
+    background: #353535;
+    color: white;
+    gap: 16px;
+    padding: 20px;
+    i {
+        margin-right: 8px;
+    }
+    @media (min-width: 768px) {
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 16px;
+        padding: 20px 100px;
+        p {
+            line-height: 32px;
+            &#logo-end{
+                padding-left: 70px;
+                width: auto;
+            }
+        }
+    }   
+}
