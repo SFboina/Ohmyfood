@@ -312,6 +312,29 @@
   justify-content: space-between;
   overflow: hidden;
 }
+.page-restaurant .container-menu .menu-card {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: down 0.5 forwards;
+}
+.page-restaurant .container-menu .menu-card:nth-child(1) {
+  animation-delay: 0.5s;
+}
+.page-restaurant .container-menu .menu-card:nth-child(2) {
+  animation-delay: 1s;
+}
+.page-restaurant .container-menu .menu-card:nth-child(3) {
+  animation-delay: 1.5s;
+}
+.page-restaurant .container-menu .menu-card:nth-child(4) {
+  animation-delay: 2s;
+}
+@keyframes down {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .page-restaurant .menu-card:hover .check {
   margin-right: 0;
 }
@@ -440,3 +463,5 @@ footer i {
     width: auto;
   }
 }
+
+/*# sourceMappingURL=style.css.map */
