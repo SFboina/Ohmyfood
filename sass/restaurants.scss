@@ -96,7 +96,7 @@
       .menu-card {
         opacity: 0;
         transform: translateY(-20px);
-        animation: down 0.5 forwards;
+        animation: down 1.5 forwards;
         &:nth-child(1) {
           animation-delay: 0.5s;
         }
@@ -107,7 +107,7 @@
           animation-delay: 1.5s;
         }
         &:nth-child(4) {
-          animation-delay: 2s;
+          animation-delay: 3s;
         }
         @keyframes down {
           to {
